@@ -38,6 +38,11 @@ def calculate_bmi():
         weight = float(entry_weight.get())
         bmi = weight / height ** 2
 
+        if age < 18:
+            bmi *= 0.9
+        elif age > 65:
+            bmi *= 1.1
+
         if bmi < 18.5:
             category = "You are underweight."
         elif 18.5 <= bmi < 25:
